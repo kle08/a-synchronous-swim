@@ -11,8 +11,11 @@
       cache: false,
       contentType: false,
       processData: false,
-      success: (command) => {
-        callback(command);
+      success: (data) => {
+        if(data){
+          SwimTeam.move
+        }
+        callback(data);
       }
     });
   }
