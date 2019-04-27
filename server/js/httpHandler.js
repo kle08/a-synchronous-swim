@@ -18,14 +18,12 @@ function generateRandom() {
 
 module.exports.router = (req, res, next = ()=>{}) => {
   // var command = generateRandom();
-  // console.log();
-  // console.log(req);
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
   if(req.method === 'GET'){
-    console.log(msgQueue.dequeue());
-    // res.write();
     res.end(msgQueue.dequeue());  
+  }else if(req.method === 'POST'){
+    res.end();  
   }
 };
 
